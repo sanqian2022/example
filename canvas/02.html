@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>画虚线</title>
+    <style>
+      #con {
+        border: 1px solid #aaa;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="con" width="500px" height="500px ">
+      您的浏览器版本过低，请升级浏览器
+    </canvas>
+    <script src="./function.js"></script>
+    <script>
+      const ctx = init("#con");
+      for (let i = 0; i < 30; i++) {
+        drawLine(ctx, [100 + i * 10, 100], [105 + i * 10, 100], "blue", 2);
+      }
+    </script>
+  </body>
+</html>

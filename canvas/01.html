@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用canvas</title>
+    <style>
+      canvas {
+        border: 1px solid #aaa;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="500px" height="500px" id="cont">
+      您的浏览器版本过低，请升级浏览器
+    </canvas>
+    <script>
+      const canvas = document.querySelector("#cont");
+      const ctx = canvas.getContext("2d");
+      drawLine(100, 100, 400, 100, "red", 5);
+      drawLine(400, 100, 400, 400, "green", 5);
+      drawLine(400, 400, 100, 400, "yellow", 5);
+      drawLine(100, 400, 100, 100, "blue", 5);
+
+      function drawLine(x1, y1, x2, y2, color, width) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.stroke();
+        ctx.closePath();
+      }
+    </script>
+  </body>
+</html>
